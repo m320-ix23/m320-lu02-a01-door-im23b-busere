@@ -1,69 +1,71 @@
 class Door:
-    """
-    A class representing a door.
-    """
-    def __init__(self, ref2door_lock, base_color):
-        self._the_door_lock = ref2door_lock
-        self.color = base_color
-        self._door_is_open = False
-        self._door_is_locked = False
+  """
+  A class representing a door.
+  """
 
-    def open_the_door(self):
-        if not self._door_is_locked:
-            self._door_is_open = True
+  def __init__(self, ref2door_lock, base_color):
+    self._the_door_lock = ref2door_lock
+    self.color = base_color
+    self._door_is_open = False
+    self._door_is_locked = False
 
-    def close_the_door(self):
-        self._door_is_open = False
+  def open_the_door(self):
+    if not self._door_is_locked:
+      self._door_is_open = True
 
-    def lock_the_door(self):
-        if not self._door_is_open:
-            self._door_is_locked = self._the_door_lock.lock()
+  def close_the_door(self):
+    self._door_is_open = False
 
-    def unlock_the_door(self):
-        if self._door_is_locked:
-            self._door_is_locked = self._the_door_lock.unlock()
+  def lock_the_door(self):
+    if not self._door_is_open:
+      self._door_is_locked = self._the_door_lock.lock()
 
-    def test(self):
-        print(f'Door color: {self.color}, '
-              f'Door open: {self._door_is_open}, '
-              f'Door locked: {self._door_is_locked}')
+  def unlock_the_door(self):
+    if self._door_is_locked:
+      self._door_is_locked = self._the_door_lock.unlock()
 
-    @property
-    def door_is_open(self):
-        return self._door_is_open
+  def test(self):
+    print(f'Door color: {self.color}, '
+          f'Door open: {self._door_is_open}, '
+          f'Door locked: {self._door_is_locked}')
 
-    @property
-    def door_is_locked(self):
-        return self._door_is_locked
+  @property
+  def door_is_open(self):
+    return self._door_is_open
 
-    @property
-    def color(self):
-        return self._color
+  @property
+  def door_is_locked(self):
+    return self._door_is_locked
 
-    @color.setter
-    def color(self, new_color):
-        self._color = new_color
+  @property
+  def color(self):
+    return self._color
+
+  @color.setter
+  def color(self, new_color):
+    self._color = new_color
 
 
 class DoorLock:
-    """
-    A class representing a door lock.
-    """
-    def __init__(self):
-        print("A lock has been created")
+  """
+  A class representing a door lock.
+  """
 
-    def lock(self):
-        return True
+  def __init__(self):
+    print("A lock has been created")
 
-    def unlock(self):
-        return False
+  def lock(self):
+    return True
+
+  def unlock(self):
+    return False
 
 
 if __name__ == "__main__":
-    print("Test for Door object")
-    the_door_lock = DoorLock()
-    the_door = Door(the_door_lock, "green")
-    the_door.test()
-    print("-- Open the door")
-    the_door.open_the_door()
-    the_door.test()
+  print("Test for Door object")
+  the_door_lock = DoorLock()
+  the_door = Door(the_door_lock, "green")
+  the_door.test()
+  print("-- Open the door")
+  the_door.open_the_door()
+  the_door.test()
