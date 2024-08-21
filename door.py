@@ -1,4 +1,7 @@
 class Door:
+    """
+    A class representing a door.
+    """
     def __init__(self, ref2door_lock, base_color):
         self._the_door_lock = ref2door_lock
         self.color = base_color
@@ -43,6 +46,9 @@ class Door:
 
 
 class DoorLock:
+    """
+    A class representing a door lock.
+    """
     def __init__(self):
         print("A lock has been created")
 
