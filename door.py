@@ -1,10 +1,4 @@
 class Door:
-    """
-    Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
-    door_is_open (für geöffnete Türe) sowie door_is_locked (für verriegelte Türe).
-    Die Türe überwacht die beiden Zustände und verhindert so Aktionen, die nicht möglich sind.
-    Das verriegeln selber delegiert die Türe an ein Objekt vom Typ Door_lock (Türschloss).
-    """
 
     # Mit dem Keyword def wird eine Funktion bzw. eben ein Konstruktor deklariert.
     # Der Konstruktor trägt IMMER den Namen __init__ und weist als ersten Parameter den Wert self auf.
@@ -36,10 +30,7 @@ class Door:
             self._door_is_open = True
 
     def close_the_door(self):
-        """
-        Methode für das schliessen der Türe.
-        Das geht immer, auch wenn die Türe schon geschlossen oder verriegelt ist. Der Zustand ändert dann nämlich nicht.
-        """
+
         self._door_is_open = False
 
     def lock_the_door(self):
